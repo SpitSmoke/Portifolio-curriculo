@@ -1,0 +1,169 @@
+/* Reset básico, box-sizing, fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Define o tamanho do body e sua cor de fundo (pode ser removida se o canvas será o fundo) */
+body {
+    color: #ffffff;
+    overflow: hidden; /* Remove a barra de rolagem */
+}
+
+/* Estilo para listas */
+li {
+    list-style: none;
+}
+
+/* Posicionamento do canvas para ser o plano de fundo */
+#Matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilização do container para garantir que ele esteja acima do canvas */
+.container {
+    z-index: 2;
+    position: relative;
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Estilos para o cabeçalho */
+header {
+    padding-bottom: 24px;
+}
+
+/* Estilos para a imagem de perfil */
+header img {
+    width: 170px;
+    height: 170px;
+}
+
+header .profile-avatar {
+    display: block;
+    margin: 0 auto 24px;
+    border-radius: 100px;
+    margin-top: 70px;
+}
+
+/* Estilos para a bio do perfil */
+.profile-bio {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparente */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.profile-bio-name {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.profile-bio-subtitle {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.profile-bio-description {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Estilos para os itens da lista de projetos */
+.project-list-item a {
+    text-decoration: none;
+    background-color: #800080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 30px;
+    border: 2px solid #6ef42b;
+    transition: all ease 0.5s;
+}
+.social-links  {
+    display: flex;
+    justify-content: space-between;
+    max-width: 240px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 4px;
+}
+/* Media Queries */
+
+/* Smartphones e dispositivos móveis pequenos (até 599px) */
+@media (max-width: 599px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    header .profile-avatar {
+        margin-top: 20px;
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-bio-name,
+    .profile-bio-subtitle,
+    .profile-bio-description {
+        font-size: 12px;
+    }
+
+    .project-list-item a {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .project-list-item a img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Tablets em retrato e dispositivos móveis grandes (600px a 1023px) */
+@media (min-width: 600px) and (max-width: 1023px) {
+    .container {
+        max-width: 90%;
+    }
+
+    header .profile-avatar {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-bio-name,
+    .profile-bio-subtitle {
+        font-size: 14px;
+    }
+
+    .profile-bio-description {
+        font-size: 13px;
+    }
+
+    .project-list-item a {
+        padding: 14px 18px;
+    }
+
+    .project-list-item a img {
+        width: 18px;
+        height: 18px;
+
+    }
+}
